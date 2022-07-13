@@ -21,6 +21,6 @@ ENV PATH=$PATH:/cpr/include:/cpr/lib
 #}' > example.cpp
 
 RUN touch include/cpr/cprver.h
-#RUN g++ example.cpp -Iinclude -Llib -lcpr
+RUN g++ example.cpp -Iinclude -Llib -lcpr
 ENV LD_LIBRARY_PATH=/cpr/lib
 RUN export LD_LIBRARY_PATH
