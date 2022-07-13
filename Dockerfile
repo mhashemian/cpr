@@ -14,7 +14,7 @@ using namespace std;\
 \
 int main(int argc, char** argv) {\
 #    cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
-     cout << argv[1] << endl;\
+     std::cout << argv[1] << endl;\
      cpr::Response r = cpr::Get(cpr::Url{argv[1]},\
                       cpr::Authentication{"user", "pass", cpr::AuthMode::BASIC},\
                       cpr::Parameters{{"anon", "true"}, {"key", "value"}});\
