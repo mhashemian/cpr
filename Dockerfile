@@ -6,7 +6,7 @@ RUN sed -i 's/cpr_option(CPR_ENABLE_SSL "Enables or disables the SSL backend. Re
 RUN cmake /cpr
 RUN cd cpr
 RUN make
-RUN export PATH=$PATH:/cpr/include:/cpr/lib
+CMD export PATH=$PATH:/cpr/include:/cpr/lib
 RUN echo '#include <cpr/cpr.h> \
 \
 int main(int argc, char** argv) {\
