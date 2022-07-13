@@ -8,20 +8,17 @@ RUN cmake .
 RUN make
 ENV PATH=$PATH:/cpr/include:/cpr/lib
 
-#RUN echo '#include <iostream> \n\
-#include <cpr/cpr.h> \n\
-\
-int main(int argc, char** argv) {\
+#RUN echo '#include <cpr/cpr.h> \n\
+#int main(int argc, char** argv) {\
 #    cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
-     std::cout << argv[1] << std::endl;\
-     cpr::Response r = cpr::Get(cpr::Url{argv[1]},\
-                      cpr::Authentication{"user", "pass", cpr::AuthMode::BASIC},\
-                      cpr::Parameters{{"anon", "true"}, {"key", "value"}});\
-    r.status_code;                  \
-    r.header["content-type"];       \
-    r.text;                         \
-    return 0;\
-}' > example.cpp
+#     cpr::Response r = cpr::Get(cpr::Url{argv[1]},\
+#                      cpr::Authentication{"user", "pass", cpr::AuthMode::BASIC},\
+#                      cpr::Parameters{{"anon", "true"}, {"key", "value"}});\
+#    r.status_code;                  \
+#    r.header["content-type"];       \
+#    r.text;                         \
+#    return 0;\
+#}' > example.cpp
 
 RUN touch include/cpr/cprver.h
 RUN g++ example.cpp -Iinclude -Llib -lcpr
