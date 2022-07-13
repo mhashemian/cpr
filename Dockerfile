@@ -8,8 +8,7 @@ RUN cmake .
 RUN make
 ENV PATH=$PATH:/cpr/include:/cpr/lib
 
-RUN echo '#include <iostream>\n\
-#include <cpr/cpr.h> \n\
+RUN echo '#include <iostream> #include <cpr/cpr.h> \n\
 \
 int main(int argc, char** argv) {\
 #    cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
