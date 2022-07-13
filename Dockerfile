@@ -1,11 +1,10 @@
 FROM ubuntu
 
 RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y wget gcc g++ clang make cmake git
-WORKDIR /
 RUN git clone https://github.com/mhashemian/cpr.git
 RUN sed -i 's/cpr_option(CPR_ENABLE_SSL "Enables or disables the SSL backend. Required to perform HTTPS requests." ON)/cpr_option(CPR_ENABLE_SSL "Enables or disables the SSL backend. Required to perform HTTPS requests." OFF)/g' /cpr/CMakeLists.txt
 RUN cmake /cpr
-RUN cd /cpr
+RUN cd cpr
 RUN make
 #RUN export PATH=$PATH:/cpr/include:/cpr/lib
 #RUN echo '#include <cpr/cpr.h> \
