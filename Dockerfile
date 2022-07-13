@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y wget gcc g++ clang make cmake git
+RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y wget gcc g++ clang make cmake git curl
 RUN git clone https://github.com/mhashemian/cpr.git
 WORKDIR cpr
 RUN sed -i 's/cpr_option(CPR_ENABLE_SSL "Enables or disables the SSL backend. Required to perform HTTPS requests." ON)/cpr_option(CPR_ENABLE_SSL "Enables or disables the SSL backend. Required to perform HTTPS requests." OFF)/g' /cpr/CMakeLists.txt
@@ -17,4 +17,4 @@ int main(int argc, char** argv) {\
     r.header["content-type"];       \
     r.text;                         \
     return 0;\
-}' > example.c
+}' > example.cpp
