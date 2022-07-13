@@ -13,7 +13,7 @@ RUN echo '#include <cpr/cpr.h> \n\
 \
 int main(int argc, char** argv) {\
 #    cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
-     std::printf("argv[1]: %i\n", 10);\
+#     std::printf("argv[1]: %i\n", 10);\
      cpr::Response r = cpr::Get(cpr::Url{argv[1]},\
                       cpr::Authentication{"user", "pass", cpr::AuthMode::BASIC},\
                       cpr::Parameters{{"anon", "true"}, {"key", "value"}});\
