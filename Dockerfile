@@ -10,10 +10,11 @@ ENV PATH=$PATH:/cpr/include:/cpr/lib
 
 RUN echo '#include <cpr/cpr.h> \n\
 #include <iostream> \
+using namespace std;
 \
 int main(int argc, char** argv) {\
 #    cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
-     std::cout << argv[1];\
+     cout << argv[1];\
      cpr::Response r = cpr::Get(cpr::Url{argv[1]},\
                       cpr::Authentication{"user", "pass", cpr::AuthMode::BASIC},\
                       cpr::Parameters{{"anon", "true"}, {"key", "value"}});\
