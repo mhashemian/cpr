@@ -4,8 +4,8 @@ RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y wget gcc g++ 
 RUN git clone https://github.com/mhashemian/cpr.git
 #CMD sed -i 's/CPR_ENABLE_SSL:BOOL=ON/CPR_ENABLE_SSL:BOOL=OFF/g' CMakeCache.txt
 RUN cd cpr
-RUN cmake .
-RUN make
+#RUN cmake .
+#RUN make
 #RUN export PATH=$PATH:/cpr/include:/cpr/lib
 #RUN echo '#include <cpr/cpr.h> \
 #\
