@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y wget gcc g++ clang make cmake git
-CMD git clone https://github.com/mhashemian/cpr.git
+RUN git clone https://github.com/mhashemian/cpr.git
 CMD sed -i 's/CPR_ENABLE_SSL:BOOL=ON/CPR_ENABLE_SSL:BOOL=OFF/g' CMakeCache.txt
 CMD cd cpr
 CMD cmake .
