@@ -3,13 +3,13 @@
 # Format: YAML 1.1
 
 # Project name that the target belongs to
-project: node-packer
+project: cpr
 
 # Target name (should be unique within the project)
-target: node-packer
+target: cpr
 
 # Base image to run the binary in.
-image: ghcr.io/mhashemian/node-packer
+image: ghcr.io/mhashemian/cpr
 
 # Turns on extra test case processing (completing a run will take longer)
 advanced_triage: false
