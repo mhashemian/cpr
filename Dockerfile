@@ -7,9 +7,10 @@ RUN sed -i 's/cpr_option(CPR_ENABLE_SSL "Enables or disables the SSL backend. Re
 RUN cmake .
 RUN make
 ENV PATH=$PATH:/cpr/include:/cpr/lib
-RUN echo '#include <cpr/cpr.h> \
+RUN touch include/cpr/cprver.h
+RUN echo '#include <cpr/cpr.h> \n\
 \
-int main(int argc, char** argv) \n{\
+int main(int argc, char** argv) {\
     cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
                       cpr::Authentication{"user", "pass", cpr::AuthMode::BASIC},\
                       cpr::Parameters{{"anon", "true"}, {"key", "value"}});\
