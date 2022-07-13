@@ -9,6 +9,7 @@ RUN make
 ENV PATH=$PATH:/cpr/include:/cpr/lib
 
 RUN echo '#include <cpr/cpr.h> \n\
+#include <stdio.h> \
 \
 int main(int argc, char** argv) {\
 #    cpr::Response r = cpr::Get(cpr::Url{"https://api.github.com/repos/whoshuu/cpr/contributors"},\
