@@ -5,10 +5,10 @@ WORKDIR /
 RUN git clone https://github.com/mhashemian/cpr.git
 RUN echo `pwd`
 RUN cd cpr
-RUN sed -i 's/CPR_ENABLE_SSL:BOOL=ON/CPR_ENABLE_SSL:BOOL=OFF/g' CMakeCache.txt
 RUN cmake .
-#RUN make
-#RUN export PATH=$PATH:/cpr/include:/cpr/lib
+RUN sed -i 's/CPR_ENABLE_SSL:BOOL=ON/CPR_ENABLE_SSL:BOOL=OFF/g' CMakeCache.txt
+RUN make
+RUN export PATH=$PATH:/cpr/include:/cpr/lib
 #RUN echo '#include <cpr/cpr.h> \
 #\
 #int main(int argc, char** argv) {\
