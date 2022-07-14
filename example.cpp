@@ -23,6 +23,6 @@ int main(int argc, char** argv) {
     r.header["content-type"];       
     r.text;
     
-    myfile.close();
+    inFile.close();
     return 0;
 }
