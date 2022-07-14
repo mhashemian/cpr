@@ -3,10 +3,12 @@
 # Format: YAML 1.1
 
 # Project name that the target belongs to
-project: cpr
+#project: cpr
+project: cpr-client
 
 # Target name (should be unique within the project)
-target: cpr
+#target: cpr
+target: cpr-client
 
 # Base image to run the binary in.
 image: ghcr.io/mhashemian/cpr
@@ -19,9 +21,13 @@ cmds:
 
   # Command used to start the target, "@@" is the input file
   # (when "@@" is omitted Mayhem defaults to stdin inputs)
-  - cmd: /cpr/a.out @@
-
-    #filepath: /tmp/package.json
+  #- cmd: /cpr/a.out @@
+  - cmd: /cpr/a.out 127.0.0.1 8080
+    timeout: 5.0
+    network:
+      timeout: 2.0
+      client: true
+      url: tcp://127.0.0.1:8080
     
     ## Uncomment to change default dir (/) from which the target is invoked
     #cwd: /
